@@ -1,0 +1,4 @@
+.\build.cmd -os browser -subset mono+libs /p:MonoWasmBuildVariant=multithread  /p:WasmEnableThreads=true 
+.\build.cmd -os browser -subset mono+libs -c Release
+
+.\build.cmd -os browser -subset mono+libs -c Debug 
