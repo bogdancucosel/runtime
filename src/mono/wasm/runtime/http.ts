@@ -18,6 +18,9 @@ function verifyEnvironment() {
 }
 
 export function http_wasm_supports_streaming_request(): boolean {
+    if(ENVIRONMENT_IS_NODE)
+        return false;
+    
     // Detecting streaming request support works like this:
     // If the browser doesn't support a particular body type, it calls toString() on the object and uses the result as the body.
     // So, if the browser doesn't support request streams, the request body becomes the string "[object ReadableStream]".
